@@ -7,10 +7,18 @@ def degree5(n):
 
     if n == 1:
         return 0
+
+    elif n % 5 != 0:
+        return -1
+
     elif n % 5 == 0:
-        return degree5(n/5) + 1
-    else:
-        return - 1
+        value = degree5(n/5)
+
+        if value != -1:
+            return 1 + degree5(n/5)
+        else:
+            return -1
 
 
+print(degree5(225))
 print(degree5(125))
